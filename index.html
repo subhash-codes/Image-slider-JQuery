@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider-Subhash BoltIot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider">
+            <figure>
+
+                <!-- Images would be here -->
+
+                <img src="images/image1.jpeg" height="140" width="100" onclick="myFunction(this)">
+                <img src="images/image2.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image3.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image4.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image5.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image6.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image7.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image2.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image5.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image8.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image4.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image10.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image1.jpeg" height="140" width="100" onclick="myFunction(this)">
+                <img src="images/image9.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image10.jpeg" height="140" width="130" onclick="myFunction(this)">
+                <img src="images/image7.jpeg" height="140" width="130" onclick="myFunction(this)">
+
+            </figure>
+            <!-- Image section -->
+
+            <button class="btn-prev">
+                <i class="fa fa-arrow-circle-left"></i>
+            </button>
+
+            <button class="btn-next">
+                <i class="fa fa-arrow-circle-right"></i>
+            </button>
+
+
+        </div>
+        <div class="nav">
+            <img id="imgBox" src="images/image1.jpeg">
+        </div>
+
+
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            x = 0;
+
+
+            $('.btn-next').click(function () {
+
+                x = (x <= 400) ? (x + 200) : 0;
+
+                $('figure').css('left', -x + "%");
+            });
+
+
+
+            $('.btn-prev').click(function () {
+
+                x = (x >= 100) ? (x - 100) : 400;
+
+                $('figure').css('left', -x + "%");
+            });
+
+
+        });
+
+        function myFunction(smallImg) {
+
+        var fullImg = document.getElementById("imgBox");
+        fullImg.src = smallImg.src;
+        }
+
+    </script>
+</body>
+
+</html>
